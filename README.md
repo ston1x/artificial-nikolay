@@ -6,5 +6,5 @@ artificial-nikolay is an artificial clone of its author, represented as a Telegr
 ## Installation
 - clone the repo
 - run `bundle install`
-- cp config/communication.dist.json config/communication.json
+- cp `config/communication.dist.json config/communication.json`
 - run `ruby app.rb`
