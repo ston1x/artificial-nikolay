@@ -1,0 +1,24 @@
+Metrics/LineLength:
+  Enabled: true
+  Max: 80
+Metrics/MethodLength:
+  Enabled: true
+  Max: 10
+Metrics/BlockLength:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/ExpandPathArguments:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/MixinUsage:
+  Enabled: false
+Style/BlockComments:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
+Lint/UnusedMethodArgument:
+  Enabled: false
+Lint/SuppressedException:
+  Enabled: false
