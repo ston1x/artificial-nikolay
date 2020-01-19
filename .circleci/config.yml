@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/artificial-nikolay
+    docker:
+      - image: circleci/ruby:2.5.3
+        environment:
+          BUNDLER_VERSION: 2.1.3
+    steps:
+      - checkout
+
+      # Restore Cached Dependencies
+      - type: cache-restore
+        name: Restore bundle cache
+        key: artificial-nikolay-{{ checksum "Gemfile.lock" }}
+
+      # Bundle install dependencies
+      - run: gem install bundler
+      - run: bundle install --path vendor/bundle
+
+      # Cache Dependencies
+      - type: cache-save
+        name: Store bundle cache
+        key: artificial-nikolay-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      - run: bundle exec rubocop
