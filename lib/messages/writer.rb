@@ -8,7 +8,7 @@ module Messages
       @response = options[:response]
     end
 
-    def write_to_db
+    def write_to_db(modes)
     end
   end
 end
