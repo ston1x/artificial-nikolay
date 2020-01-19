@@ -24,6 +24,7 @@ module App
         last_name: message.from.last_name,
         username: message.from.username
       )
+
       puts "#{sender.first_name} #{sender.last_name}: #{message.text}"
 
       analysis = Messages::Analyzer.new(message).analyze
