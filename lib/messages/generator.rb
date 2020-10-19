@@ -11,12 +11,19 @@ module Messages
     end
 
     def generate
-      @text = build_up_text
+      @text = say(:greeting) + space + say(:parasite)
 
       self
     end
 
     private
+
+    def say(expression)
+      expression = expression.to_s
+      entry = COMMUNICATION[@analysis.sender.username][expression] ||
+              COMMUNICATION['stranger_ru'][expression]
+      entry.is_a?(Array) ? entry.sample : entry
+    end
 
     # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     def build_up_text

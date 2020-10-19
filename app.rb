@@ -38,11 +38,11 @@ module App
         text: response.text
       )
 
-      writer = Messages::Writer.new(
-        message: analysis,
-        response: response.text
-      )
-      writer.write_to_db(:inbox, :outbox)
+      # writer = Messages::Writer.new(
+      #   message: analysis,
+      #   response: response.text
+      # )
+      # writer.write_to_db(:inbox, :outbox)
     end
   end
 end
